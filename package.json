@@ -28,8 +28,10 @@
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "artillery": "^1.6.1",
     "babel-loader": "^8.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "newrelic": "^6.13.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }

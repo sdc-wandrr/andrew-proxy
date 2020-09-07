@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const { createProxyMiddleware } = require('http-proxy-middleware');
+require('newrelic');
 const app = express();
 const PORT = 3030;
 
