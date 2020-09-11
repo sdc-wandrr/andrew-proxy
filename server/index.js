@@ -24,7 +24,7 @@ app.use('/hostels/:hostel_id', express.static(path.join(__dirname, '../public'))
 // app.use('/house/:id/rules', createProxyMiddleware({ target: 'http://localhost:3000', changeOrigin: true }));
 // app.use('/house/:id/address', createProxyMiddleware({ target: 'http://localhost:3000', changeOrigin: true }));
 // reviews service
-app.use('/hostels/:id/api/reviews', createProxyMiddleware({ target: 'http://localhost:3001/', changeOrigin: true }));
+app.use('/hostels/:id/api/reviews', createProxyMiddleware({ target: 'http://172.31.32.92:3001/', changeOrigin: true }));
 
 
 app.listen(PORT, () => console.log('Proxy Server listening on port ', PORT));
