@@ -11,6 +11,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use('/hostels/:hostel_id', express.static(path.join(__dirname, '../public')));
+app.use('/dist/bundle.js', createProxyMiddleware({ target: 'http://172.31.32.92:3001/', changeOrigin: true }));
 
 // API reroutes
 
