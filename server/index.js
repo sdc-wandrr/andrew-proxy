@@ -27,6 +27,9 @@ app.use('/dist/bundle.js', createProxyMiddleware({ target: 'http://172.31.32.92:
 // app.use('/house/:id/address', createProxyMiddleware({ target: 'http://localhost:3000', changeOrigin: true }));
 // reviews service
 app.use('/hostels/:id/api/reviews', createProxyMiddleware({ target: 'http://172.31.32.92:3001/', changeOrigin: true }));
+app.use('/api/reviews', createProxyMiddleware({ target: 'http://172.31.32.92:3001/', changeOrigin: true }));
+app.use('/api/reviews/:id', createProxyMiddleware({ target: 'http://172.31.32.92:3001/', changeOrigin: true }));
+
 
 
 app.listen(PORT, () => console.log('Proxy Server listening on port ', PORT));
