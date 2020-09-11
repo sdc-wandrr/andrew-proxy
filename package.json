@@ -8,8 +8,10 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "node server/index.js",
-    "server-dev": "nodemon server/index.js"
+    "start": "pm2 start server/server.js --watch",
+    "stop": "pm2 stop server/server.js",
+    "restart": "pm2 restart server/server.js --watch",
+    "start-dev": "nodemon server/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
