@@ -3,7 +3,7 @@ const path = require('path');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 require('newrelic');
 
-const services = require('./services_config.js');
+const {carouselServiceURL, descriptionServiceURL, reviewServiceURL} = require('./services_config.js');
 const app = express();
 const PORT = 3030;
 
@@ -20,15 +20,15 @@ app.use('/hostels/:hostel_id', express.static(path.join(__dirname, '../public'))
 // ReRoutes
 
 // Image Carousel Service
-app.use('images/', createProxyMiddleware({ target: carouselServiceURL, changeOrigin: true }));
+app.use('/images/bundle.js', createProxyMiddleware({ target: carouselServiceURL, changeOrigin: true }));
 app.use('/api/hostels/:hostel_id/images', createProxyMiddleware({ target: carouselServiceURL, changeOrigin: true }));
 
 // Info Service
-app.use('info/', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
-app.use('/house/:id/hostel', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
-app.use('/house/:id/description', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
-app.use('/house/:id/rules', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
-app.use('/house/:id/address', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
+app.use('/info/bundle.js', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
+app.use('/api/house/:id/hostel', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
+app.use('/api/house/:id/description', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
+app.use('/api/house/:id/rules', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
+app.use('/api/house/:id/address', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
 
 // Reviews Service
 app.use('/reviews/bundle.js', createProxyMiddleware({ target: reviewServiceURL, changeOrigin: true }));
