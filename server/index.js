@@ -29,9 +29,10 @@ app.use('/api/house/:id/hostel', createProxyMiddleware({ target: descriptionServ
 app.use('/api/house/:id/description', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
 app.use('/api/house/:id/rules', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
 app.use('/api/house/:id/address', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
+app.use('/api/house/:id', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
 
 // Reviews Service
-app.use('/reviews/bundle.js', createProxyMiddleware({ target: reviewServiceURL, changeOrigin: true }));
+app.use('/reviews/dist/bundle.js', createProxyMiddleware({ target: reviewServiceURL, changeOrigin: true }));
 app.use('/hostels/:id/api/reviews', createProxyMiddleware({ target: reviewServiceURL, changeOrigin: true }));
 app.use('/api/reviews', createProxyMiddleware({ target: reviewServiceURL, changeOrigin: true }));
 app.use('/api/reviews/:id', createProxyMiddleware({ target: reviewServiceURL, changeOrigin: true }));
