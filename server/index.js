@@ -10,6 +10,7 @@ app.use((req, res, next) => {
   console.log(`serving ${req.method} request for ${req.url}`);
   next();
 });
+app.use('/', express.static(path.join(__dirname, '../public')));
 app.use('/hostels/:hostel_id', express.static(path.join(__dirname, '../public')));
 app.use('/dist/bundle.js', createProxyMiddleware({ target: 'http://172.31.32.92:3001/', changeOrigin: true }));
 
