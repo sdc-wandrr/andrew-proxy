@@ -19,17 +19,17 @@ app.use('/hostels/:hostel_id', express.static(path.join(__dirname, '../public'))
 
 // ReRoutes
 
-// Image Carousel Service
+/* Image Carousel Service
 app.use('/images/bundle.js', createProxyMiddleware({ target: carouselServiceURL, changeOrigin: true }));
-app.use('/api/hostels/:hostel_id/images', createProxyMiddleware({ target: carouselServiceURL, changeOrigin: true }));
+app.use('/api/hostels/:hostel_id/images', createProxyMiddleware({ target: carouselServiceURL, changeOrigin: true })); */
 
-// Info Service
+/* Info Service
 app.use('/info/bundle.js', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
 app.use('/api/house/:id/hostel', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
 app.use('/api/house/:id/description', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
 app.use('/api/house/:id/rules', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
 app.use('/api/house/:id/address', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
-app.use('/api/house/:id', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true }));
+app.use('/api/house/:id', createProxyMiddleware({ target: descriptionServiceURL, changeOrigin: true })); */
 
 // Reviews Service
 app.use('/reviews/dist/bundle.js', createProxyMiddleware({ target: reviewServiceURL, changeOrigin: true }));
